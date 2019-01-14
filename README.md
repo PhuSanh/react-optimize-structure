@@ -1,6 +1,7 @@
 ## `Features`
-1. asyncComponent
+1. AsyncComponent
 2. Common functions sepearte into file
+3. Each route seperate into file
 
 ## `Packages`
 1. material-ui
@@ -12,3 +13,4 @@
 7. redux, react-redux, redux-thunk
 8. react-router-dom, react-dom
 9. styled-components
+7. dotenv (for REACT_APP enviroment variables)
