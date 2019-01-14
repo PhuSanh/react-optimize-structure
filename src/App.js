@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+
 
 import routes from "./routes";
 import SidebarContainer from "./containers/Sidebar";
+import HeadbarContainer from "./containers/Headbar";
 import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 
@@ -33,8 +36,11 @@ class App extends Component {
 			routes
 		} = this.state;
 
+		const { sidebar } = this.props;
+
     return (
-      <div className="App">
+      <div className={"App " + (sidebar.isShow ? "fixed-sidebar" : "")}>
+				<HeadbarContainer />
         <SidebarContainer />
 				<div id="main-app">
 					<Switch>
@@ -47,4 +53,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+	return {
+		sidebar: state.sidebar,
+	}
+}
+
+export default withRouter(connect(mapStateToProps, null)(App));

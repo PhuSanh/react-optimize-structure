@@ -71,25 +71,21 @@ const MenuLink = props => {
 }
 
 const menus = [
-	{label: "Home", to: "/", activeOnlyWhenExact: true},
+	{label: "Dashboard", to: "/", activeOnlyWhenExact: true},
 	{
-		label: "Master Data", parent: "master_data", subs: [
-			{ label: "user", to: "/user" },
-			{ label: "role", to: "/role" },
-			{ label: "vehicle", to: "/vehicle" },
-			{ label: "driver", to: "/driver" },
-			{ label: "supplier", to: "/supplier" },
-			{ label: "warehouse", to: "/warehouse" },
-			{ label: "waiting_line", to: "/waitingline" },
-			{ label: "shipment_line", to: "/shipmentline" },
-			{ label: "area", to: "/area" },
+		label: "Thông tin chung", parent: "master_data", subs: [
+			{ label: "Nhân viên", to: "/user" },
+			{ label: "Cửa hàng", to: "/shop" },
+			{ label: "Sản phẩm phế liệu", to: "/item" },
+			{ label: "Cấp bậc", to: "/role" },
+			{ label: "Nơi thu gom", to: "/supplier" },
+			{ label: "Nhà máy", to: "/warehouse" }
 		]
 	},
-	{ label: "Phân quyền", to: "/set-privilege" },
-	{ label: "Quản lý line chờ", to: "/waiting-line-management" },
-	{ label: "Quản lý trip", to: "/trip-management" },
-	{ label: "Line xuất hàng", to: "/" },
-	{ label: "Import dữ liệu", to: "/contact" },
+	{ label: "Yêu cầu thu gom", to: "/collection-request" },
+	{ label: "Lịch thu gom", to: "/collection-schedule" },
+	{ label: "Saleman report", to: "/saleman-report" },
+	{ label: "Thông tin bán hàng", to: "/selling-factory" },
 ]
 
 class MainMenu extends Component {

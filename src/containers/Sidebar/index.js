@@ -8,7 +8,7 @@ class SidebarContainer extends Component {
 
 	render () {
 
-		const { sidebar, auth } = this.props;
+		const { sidebar } = this.props;
 		// const username = auth.user.username || auth.user.user_name;
 
 		return (
